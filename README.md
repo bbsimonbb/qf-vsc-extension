@@ -1,5 +1,3 @@
-![ibm-sj-ad-1962.jpg](ibm-sj-ad-1962.jpg)
-
 # QueryFirst - Frictionless Data Access
 The QueryFirst extension for VS Code generates a C# wrapper for your .sql files. This is the VS Code version of the nearly-famous [Visual Studio extension](https://marketplace.visualstudio.com/items?itemName=bbsimonbb.QueryFirst&ssr=false#overview)
 

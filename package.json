@@ -46,6 +46,6 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/username/repository.git"
+		"url": "https://github.com/bbsimonbb/qf-vsc-extension.git"
 	  }
 }
