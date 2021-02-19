@@ -41,7 +41,7 @@ QueryFirst, first published in 2016, pionneered the 'typed raw sql' approach to 
 There are two that we know of:
 
 - QueryFirst can't detect the type of a parameter when it's used more than once. To workaround, get your query in a runnable state and save it with 1 usage of the parameter before you introduce others.
-- QueryFirst can't detect changes in the length of underlying columns after a parameter has been detected. QueryFirst will infer the parameter length from the variable declaration in the designTime section. If you're changing column lengths in the schema, you will need to manually hunt down corresponding parameters (variables) and modify their lengths.
+- QueryFirst can't detect changes in the length of underlying columns after a parameter has been detected and declared in the designTime section. QueryFirst will infer the parameter length from the local variable declaration. If you're changing column lengths in the schema, you will need to manually hunt down corresponding parameters (variables) and modify their lengths.
 
 ## Ambitious?
 

@@ -11,18 +11,10 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onLanguage:sql",
-		"onCommand:queryfirst.watch"
+		"onLanguage:sql"
 	],
 	"main": "./out/extension.js",
-	"contributes": {
-		"commands": [
-			{
-				"command": "queryfirst.watch",
-				"title": "QueryFirst:Watch Workspace"
-			}
-		]
-	},
+
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
 		"compile": "tsc -p ./",

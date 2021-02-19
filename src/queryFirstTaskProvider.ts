@@ -16,7 +16,8 @@ export class QueryFirstTaskProvider implements vscode.TaskProvider {
             this.buildWorkspace(),
             this.buildFile(),
             this.newQuery(),
-            this.newConfig()
+            this.newConfig(),
+            this.newRuntimeConnection()
         ];
     }
     private watchFile(): vscode.Task {
@@ -88,7 +89,18 @@ export class QueryFirstTaskProvider implements vscode.TaskProvider {
         // serve.isBackground = true;
         return newConfig;
     }
-
+    private newRuntimeConnection(): vscode.Task {
+        let newConfig = new vscode.Task(
+            {type: "queryfirst", task: "new QfRuntimeConnection.cs"},
+            "Create a new QfRuntimeConnection class",
+            "queryfirst",
+            new vscode.ShellExecution(binPath + " --newRuntimeConnection"),
+            []
+        );
+        // serve.group = vscode.TaskGroup.Build;
+        // serve.isBackground = true;
+        return newConfig;
+    }
     resolveTask(): vscode.ProviderResult<vscode.Task> {
         return undefined;
     }
