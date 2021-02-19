@@ -1,5 +1,11 @@
 import * as vscode from "vscode";
 
+var binPath: string = "";
+let myExt = vscode.extensions.getExtension("SimonBoddy.QueryFirst");
+if (myExt) {
+    binPath = myExt.extensionPath + "\\bin\\queryfirst";
+}
+
 export class QueryFirstTaskProvider implements vscode.TaskProvider {
     static queryFirstType = "queryfirst";
 
@@ -18,7 +24,7 @@ export class QueryFirstTaskProvider implements vscode.TaskProvider {
             {type: "queryfirst", task: ""},
              "Watch this query",
             "queryfirst",
-            new vscode.ShellExecution("queryfirst -w ${file}",{cwd:'${workspaceFolder}'}),
+            new vscode.ShellExecution(binPath + " -w ${file}",{cwd:'${workspaceFolder}'}),
             []
         );
         //build.group = vscode.TaskGroup.Build;
@@ -29,7 +35,7 @@ export class QueryFirstTaskProvider implements vscode.TaskProvider {
             {type: "queryfirst", task: ""},
              "Watch workspace",
             "queryfirst",
-            new vscode.ShellExecution("queryfirst -w",{cwd:'${workspaceFolder}'}),
+            new vscode.ShellExecution(binPath + " -w",{cwd:'${workspaceFolder}'}),
             []
         );
         //build.group = vscode.TaskGroup.Build;
@@ -40,7 +46,7 @@ export class QueryFirstTaskProvider implements vscode.TaskProvider {
             {type: "queryfirst", task: ""},
              "(Re)build this query",
             "queryfirst",
-            new vscode.ShellExecution("queryfirst ${file}",{cwd:'${workspaceFolder}'}),
+            new vscode.ShellExecution(binPath + " ${file}",{cwd:'${workspaceFolder}'}),
             []
         );
         //build.group = vscode.TaskGroup.Build;
@@ -51,7 +57,7 @@ export class QueryFirstTaskProvider implements vscode.TaskProvider {
             {type: "queryfirst", task: ""},
              "Rebuild all queries in this workspace",
             "queryfirst",
-            new vscode.ShellExecution("queryfirst",{cwd:'${workspaceFolder}'}),
+            new vscode.ShellExecution(binPath ,{cwd:'${workspaceFolder}'}),
             []
         );
         //build.group = vscode.TaskGroup.Build;
@@ -62,7 +68,7 @@ export class QueryFirstTaskProvider implements vscode.TaskProvider {
             {type: "queryfirst", task: "new"},
              "New query",
             "queryfirst",
-            new vscode.ShellExecution("queryfirst --new=newQuery"),
+            new vscode.ShellExecution(binPath + " --new=newQuery"),
             []
         );
         //newQuery.group = vscode.TaskGroup.Build;
@@ -75,7 +81,7 @@ export class QueryFirstTaskProvider implements vscode.TaskProvider {
             {type: "queryfirst", task: "new qfconfig.json"},
             "Create a new config file",
             "queryfirst",
-            new vscode.ShellExecution("queryfirst --newConfig"),
+            new vscode.ShellExecution(binPath + " --newConfig"),
             []
         );
         // serve.group = vscode.TaskGroup.Build;

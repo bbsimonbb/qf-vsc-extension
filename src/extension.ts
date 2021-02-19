@@ -9,10 +9,6 @@ let queryFirstTaskProvider: vscode.Disposable | undefined;
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "queryfirst" is now active!');
-
 	// sby!
 	queryFirstTaskProvider = vscode.tasks.registerTaskProvider(QueryFirstTaskProvider.queryFirstType, new QueryFirstTaskProvider());
 
@@ -29,8 +25,8 @@ export function activate(context: vscode.ExtensionContext) {
 
 	context.subscriptions.push(disposable);
 }
- export function deactivate():void{
-	 if(queryFirstTaskProvider){
-	 	queryFirstTaskProvider.dispose();
-	 }
- }
+export function deactivate(): void {
+	if (queryFirstTaskProvider) {
+		queryFirstTaskProvider.dispose();
+	}
+}
