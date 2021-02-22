@@ -62,6 +62,7 @@ We expect that QueryFirst will quickly become your favourite data access method.
 | Prevents SQL injection ||x|x|x|
 | Queries distributed and versioned with application code |x|x||x|
 | Bundles an integration test to verify your production schema ||||x|
+| Elegant, SQL-injection proof, dynamic sorting ||||x|
 
 \* only with the help of EF reverse POCO generator (not actually part of EF), but you'll need to open your solution _as administrator_, find the .tt and right-click on 'run custom tool'. Not kidding.
 
