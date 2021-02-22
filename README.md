@@ -24,6 +24,10 @@ The QueryFirst extension for VS Code generates a C# wrapper for your .sql files.
 
 - With all this in place, you have 4 options for triggering the generation. The handiest (why would you use anything else?) is `queryfirst: Watch workspace`. It will whir away in the background, regenerating any query in your workspace whenever it is saved. Keep your eye on the terminal output for errors :-)
 
+- The generated code can include a self-test, to test the query in the compiled binary against a production data source. To use this feature:
+  - put `"MakeSelfTest":true` in your qfconfig.json.
+  - add the following nuget packages to your project: QueryFirst.CoreLib, xunit, Microsoft.NET.Test.Sdk
+
 ## TL;dr
 
 Query-first is a visual studio extension for working intelligently with SQL in C# projects. Put your queries in .sql files with "QueryFirst" in a comment on the first line. When you build your query (with the tasks provided), Query-first runs it (in a sandbox. No DB changes are persisted), retrieves the schema and generates two classes and an interface: a wrapper (repository) class with methods Execute(), ExecuteScalar(), ExecuteNonQuery() etc, its corresponding interface, and a POCO encapsulating a line of results.

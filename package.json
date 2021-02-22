@@ -3,7 +3,7 @@
 	"publisher": "SimonBoddy",
 	"displayName": "QueryFirst",
 	"description": "Typed raw sql for everybody.",
-	"version": "0.0.4",
+	"version": "0.0.6",
 	"engines": {
 		"vscode": "^1.53.0"
 	},
